@@ -169,7 +169,7 @@ private: // data members
     static string trim(const string &s) { // remove whitespace from both ends of a string
         const string ws = " \t\r\n"; // whitespace characters to remove
         size_t start = s.find_first_not_of(ws); // find the first non-whitespace character
-        if (start == string::npos) return "";         // all whitespace
+        if (start == string::npos) return ""; // all whitespace
         size_t end = s.find_last_not_of(ws); // find the last non-whitespace character
         return s.substr(start, end - start + 1); // return the trimmed string
     }
@@ -178,7 +178,7 @@ private: // data members
     void addEmail(const string &rest) { // parse the rest of the line and insert the email into the heap
         size_t c1 = rest.find(','); // find the first comma
         size_t c2 = (c1 == string::npos) ? string::npos : rest.find(',', c1 + 1); // find the second comma
-        if (c2 == string::npos) {                     // fewer than two commas
+        if (c2 == string::npos) { // fewer than two commas
             cerr << "Warning: malformed EMAIL line ignored\n"; // print a warning message
             return; // ignore this line
         }
